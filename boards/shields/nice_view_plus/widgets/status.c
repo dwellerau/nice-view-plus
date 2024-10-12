@@ -325,7 +325,10 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     widget_battery_status_init();
     widget_output_status_init();
     widget_layer_status_init();
+
+    #if IS_ENABLED(CONFIG_NICE_VIEW_WIDGET_STATUS_WPM)
     widget_wpm_status_init();
+    #endif    
 
     return 0;
 }
