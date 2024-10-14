@@ -314,11 +314,11 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_YINYANG u
 };
 
 const lv_img_dsc_t yinyang = {
-    .header.cf = LV_IMG_CF_INDEXED_2BIT,
-    .header.always_zero = 0,
-    .header.reserved = 0,
-    .header.w = 140,
-    .header.h = 42,
-    .data_size = 1224,
-    .data = yinyang_map,
+  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+  .header.always_zero = 0,
+  .header.reserved = 0,
+  .header.w = 140,
+  .header.h = 68,
+  .data_size = 1224,
+  .data = yinyang_map,
 };
