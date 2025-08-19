@@ -351,6 +351,13 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
         lv_obj_t *caps = zmk_widget_caps_status_init(widget->obj);
         lv_obj_set_size(caps, 66, 40);
         lv_obj_align_to(caps, top, LV_ALIGN_TOP_LEFT, 1, 22);
+        /* Rotate the overlay to match the rotated canvas */
+        lv_obj_set_style_transform_angle(caps, 900, 0);              // 900 = 90.0 degrees
+        lv_obj_set_style_transform_pivot_x(caps, 0, 0);
+        lv_obj_set_style_transform_pivot_y(caps, 0, 0);
+        /* Give extra room so rotation doesn't clip */
+        lv_obj_set_style_transform_width(caps, 40, 0);
+        lv_obj_set_style_transform_height(caps, 40, 0);        
         lv_obj_set_style_bg_opa(caps, LV_OPA_TRANSP, 0);
         lv_obj_set_style_border_opa(caps, LV_OPA_TRANSP, 0);
         lv_obj_set_style_pad_all(caps, 0, 0);
